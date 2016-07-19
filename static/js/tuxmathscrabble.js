@@ -1279,8 +1279,9 @@ var TuxMathScrabble=function(){
 		me.board.fade_off();
 		
 		//show demo aviso primero
-		var xc=window.innerWidth/2;
-		var yc=window.innerHeight/2;
+		var xc=parseInt(window.innerWidth/2);
+		var yc=parseInt(window.innerHeight/2);
+		console.log(xc+", "+yc);
 		var msg=['T','u','x','M','a','t','h','S','c','r','a','b','b','l','e'];
 		
 		var surfs=new Array();

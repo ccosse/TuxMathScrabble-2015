@@ -65,7 +65,6 @@ var Board=function(board_number,S,M,N){
 			//me.spots[sidx].surf.style.visibility="visible";
 		}
 	}
-	
 	me.increment_num_commited=function(){
 		me.num_commited+=1;
 	}

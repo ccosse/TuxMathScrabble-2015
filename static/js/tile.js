@@ -98,7 +98,7 @@ var mkTile=function(dtype,plyridx){
 		tile_base.addEventListener("mousedown",window.THE_TMS_INSTANCE.mouse_down,false);
 		
 		tile_base.addEventListener('touchmove',function(event){
-			
+			if(window.CL)console.log("touchmove");
 			
 			window.touch_report();
 			var touch=event.targetTouches[0];
