@@ -8,9 +8,9 @@
 <i><b>TuxMathScrabble 2013</b></i>
 
 <br>
-<img src="tuxmathscrabble-2013.png"/>
+<img src="tuxmathscrabble-2015.png"/>
 <br>
-<i><b>TuxMathScrabble 2014</b></i>
+<i><b>TuxMathScrabble 2015</b></i>
 
 <br>
 <img src="tuxmathscrabble-python.png"/>
