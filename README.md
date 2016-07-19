@@ -1,4 +1,5 @@
 <center>
+
 <h2>TuxMathScrabble-HTML5</h2>
 <h3>A Math Game</h3>
 
