@@ -3,15 +3,16 @@
 <html lang="en">
 
 <head>
-    
+
 	<title>TuxMathScrabble</title>
-	
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+	<meta charset='utf-8'>
+
 	<link rel="stylesheet" href="static/css/jquery.mobile-1.4.4.css">
-	
+
 	<style type="text/css">
-		
+
 		@font-face {
 			font-family: 'Mickey';
 			src:url('static/font/mickey.ttf') format('truetype');
@@ -21,26 +22,26 @@
 		div{text-shadow:none;}
 		body{overflow:auto;}
 		table{cell-padding:0;cell-spacing:0;border-collapse:collapse;border-spacing:0px;}
-		
+
 		div.content{}
 		div.interface_button{cursor:hand;}
 		div.background{text-shadow:none;background:url('static/img/Wave-1500x844.jpg');background-size:cover;background-repeat:no-repeat;}
 		div.banner{text-shadow:none;font-family:Mickey;font-size:40px;vertical-align:center;width:100%;height:50px;text-align:center;background:#3ac468;color:#FFEE00;}
 		div.navigation_menu{border:0px solid;border-radius:10px;text-shadow:none;opacity:0.9;background:#252525;position:absolute;zIndex:100;}
 		div.settings_panel{color:yellow;background:navy;opacity:0.6;position:absolute;}
-		
+
 		div.spot1px{position:relative;align:center;color:#00ff00;border:1px solid;border-radius:3px;}
 		div.tilebase11px{position:relative;opacity:1.0;color:white;border:1px solid;border-radius:2px;}
 		div.tilebase21px{position:absolute;opacity:1.0;color:white;border:1px solid;border-radius:2px;}
-		
+
 		div.spot{position:relative;align:center;color:#00ff00;border:2px solid;border-radius:5px;}
 		div.tilebase1{cursor:hand;position:relative;opacity:1.0;color:white;border:2px solid;border-radius:3px;}
 		div.tilebase2{cursor:hand;position:absolute;opacity:1.0;color:white;border:2px solid;border-radius:3px;}
-		
+
 		div.player1{cursor:hand;position:relative;background:#333333;opacity:1.0;color:#00CCFF;font-family:utopia;font-weight:bold;}
 		div.player2{cursor:hand;position:relative;background:#333333;opacity:1.0;color:#00FF00;font-family:utopia;font-weight:bold;}
 		div.subscript{color:yellow;text-align:right;z-index:10;position: absolute;top: 75%;left:50%;height: 10%;width:40%;margin: 0 0 0 0;}
-		
+
 	</style>
 
 	<script src="static/js/jquery-1.4.4.js"></script>
@@ -61,11 +62,11 @@
 
 	<script type="text/javascript">
 	function decode(str) {
-	  var div = document.createElement('div'); 
+	  var div = document.createElement('div');
 	  div.innerHTML = str ;
 	  var decoded=str;
 	  try{
-	  	decoded = div.firstChild.nodeValue; 
+	  	decoded = div.firstChild.nodeValue;
 	  }
 	  catch(e){;}
 	  return decoded ;
@@ -93,7 +94,7 @@
 			html+=navigation_menu_struct[key]['value'];
 			html+="</a>";
 			html+="</td></tr>";
-			
+
 		}
 		html+="</table>";
 		navigation_menu_div.innerHTML=html;
@@ -223,21 +224,21 @@ window.get_points=function(str){
 		log("get_points: "+str+" "+window.EQUAL_PTS);
 		return parseInt(window.EQUAL_PTS);
 	}
-	return 0;		
+	return 0;
 }
 
 window.onorientationchange=window.onload=window.onresize=function(e){
 	//set sizes belonging to this file here:
 	var bg=document.getElementById("background_div");
 	var content=document.getElementById("content_div");
-	
+
 	bg.style.width=window.innerWidth+"px";
 	bg.style.height=window.innerHeight-window.NAVBAR_HEIGHT+"px";
 	content.style.width=window.innerWidth+"px";
 	content.style.height=window.innerHeight-window.NAVBAR_HEIGHT+"px";
-	
+
 //	window.rebuild_menus();
-	
+
 	try{window.THE_TMS_INSTANCE.rescale_interface();}
 	catch(e){}
 }
@@ -274,25 +275,25 @@ $(document).ready(function(){
 	window.remake_tms();
 });
 window.remake_tms=function(){
-	
+
 	var bg_div=document.getElementById("background_div");
 	bg_div.style.backgroundImage="url("+window.bg_img_name+")";
-	
+
 	document.getElementById("content_div").innerHTML="";
 	window.THE_TMS_INSTANCE=null;
-	
+
 	window.THE_TMS_INSTANCE=new TuxMathScrabble();
-	
+
 	window.THE_TMS_INSTANCE.init();
-	
+
 	$(window).resize();
-	
+
 	window.STATUS="Ready";
 	window.THE_TMS_INSTANCE.render_status();
-	
-	
+
+
 //	window.RUNNING=true;
-	
+
 //	window.THE_TMS_INSTANCE.start();
 
 }
@@ -326,7 +327,7 @@ window.remake_tms=function(){
 	</center>
 
   <div data-role="main" class="ui-content">
-	 
+
 	 <center>
 	 <h3>Settings</h3>
 	 </center>
@@ -337,13 +338,13 @@ window.remake_tms=function(){
 		<li> Level 1 = Lower numbered tiles and only add/subtraction
 		<li> Level 4 = Numbers up to 19, multiplication and division
 		<li> Goal: First, this new version of TuxMathScrabble was developed for integration into a new product that
-			will be available soon, and many of the features of the new product remain in the version served from 
+			will be available soon, and many of the features of the new product remain in the version served from
 			Asymptopia Software's main website.  Goal and Credits are two concepts from the new system and not really
 			applicable here.  However, the Goal is the number of points you must reach in order to unlock the credits (gold button on left).
 		<li> TuxFactor (1-4) This controls the complexity of Tux's moves.  TuxFactor=4 is most complex.
 		<li> Credits: This is the points threshold at which credits become unlocked for transfer.  This concept only applies to the
 			new (not yet released) product.
-	</ul>	
+	</ul>
 
 	 <h3>Instructions</h3>
 	 </center>
@@ -359,18 +360,18 @@ window.remake_tms=function(){
 		<li> Consider setting a goal, such as "Reach 200 pts in Level 4", accompanied by some reward.
 	 </ul>
   </div>
-	
-	
+
+
   <div data-role="footer" style="text-align:center;">
 		<h1>TuxMathScrabble</h1>
   </div>
-</div> 
+</div>
 
 
 
 <!--SETTINGS-OVERLAY-->
 <div data-role="page" data-dialog="true" id="settings_overlay">
-  
+
   <div data-role="header">
     <h1>Settings</h1>
   </div>
@@ -379,14 +380,14 @@ window.remake_tms=function(){
     <a href="http://www.asymptopia.org" target="_blank">
 		<div class="ui-corner-all" style="background:#1d1d1d;">
     		<img src="static/img/aorg-logo-2015-202x75-rv.png" align="center"/>
-		</div>    
+		</div>
 	</a>
     </center>
 
   <div data-role="main" class="ui-content" id="new_settings_div" style="width:100%;text-align:center;">
 	<script>make_settings()</script>
   </div>
-  
+
 	<center>
     <a href="http://www.asymptopia.org" target="_blank">
 		<div style="background:#3a68c4;">
@@ -396,7 +397,7 @@ window.remake_tms=function(){
   <div data-role="footer" style="text-align:center;">
 		<h1>Settings</h1>
   </div>
-</div> 
+</div>
 
 
 
@@ -426,7 +427,7 @@ window.remake_tms=function(){
   <div data-role="footer" style="text-align:center;">
 		<h1>TuxMathScrabble</h1>
   </div>
-</div> 
+</div>
 
 
 <!--ALGORITHM-OVERLAY-->
@@ -443,7 +444,12 @@ window.remake_tms=function(){
   <div data-role="footer" style="text-align:center;">
 		<h1>Algorithm Grid</h1>
   </div>
-</div> 
+
+  <center>
+  <span style='text-shadow:none;font-family:Mickey;font-size:12pt;color:#00FF42;'>TuxMathScrabble</span>
+  </center>
+
+</div>
 
 
 
