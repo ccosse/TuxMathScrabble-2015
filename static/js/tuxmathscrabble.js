@@ -1,3 +1,10 @@
+/**********************************************************
+
+    Author          :Charles Brissac
+
+    Email           :cdbrissac_at_gmail_dot_com
+
+***********************************************************/
 var TuxMathScrabble=function(){
 	me={};
 	var submission=new Array();

@@ -1,20 +1,12 @@
 /**********************************************************
 
-    Organization    :Asymptopia Software | Software@theLimit
+    Author          :Charles Brissac
 
-    Website         :www.asymptopia.org
-
-    Author          :Charles B. Cosse
-
-    Email           :ccosse@asymptopia.org
-
-    Copyright       :(C) 2006-2014 Asymptopia Software
-
-    License         :All Rights Reserved
+    Email           :cdbrissac_at_gmail_dot_com
 
 ***********************************************************/
 var Spot=function(B,S,ridx,cidx){
-	
+
 	var me={};
 	me.B=B;
 //	me.S=S;
@@ -24,11 +16,11 @@ var Spot=function(B,S,ridx,cidx){
 	me.occupied=false;
 	me.locked=false;
 	me.guest=null;
-	
+
 	surf=document.createElement("div");
 	surf.className="spot";
 	if(window.BORDER==1)surf.className="spot1px";
-	
+
 	surf.draggable=false;
 //	surf.style.background="black";
 //	surf.style.border="2px solid";
@@ -38,9 +30,9 @@ var Spot=function(B,S,ridx,cidx){
 	//surf.title=JSON.stringify(pyld);
 	surf.style.width=(window.S+2*window.BORDER)+"px";
 	surf.style.height=(window.S+2*window.BORDER)+"px";
-	
+
 	me.surf=surf;
-	
+
 	me.rescale=function(){
 		if(me.guest){
 			me.guest.style.width=(window.S)+"px";
@@ -49,7 +41,7 @@ var Spot=function(B,S,ridx,cidx){
 			me.guest.firstChild.style.height=(window.S)+"px";
 			//me.guest.style.top=parseInt(2.)+"px";
 			//me.guest.style.left=parseInt(2.)+"px";
-	
+
 			try{
 				me.guest.firstChild.style.fontSize=window.tile_fontsize;
 				me.guest.firstChild.nextSibling.style.fontSize=window.subscript_fontsize;
@@ -58,7 +50,7 @@ var Spot=function(B,S,ridx,cidx){
 		}
 		me.surf.style.width=(window.S+2*window.BORDER)+"px";
 		me.surf.style.height=(window.S+2*window.BORDER)+"px";
-		
+
 	}
 	me.identify=function(){
 		msg="IDENTIFY: SPOT "+me.m+" "+me.n;
@@ -80,7 +72,7 @@ var Spot=function(B,S,ridx,cidx){
 		//	t.style.left=(me.surf.getBoundingClientRect().left)+"px";
 		}
 		else{
-			
+
 			//t.style.top=(me.surf.getBoundingClientRect().top - window.lastX)+"px";
 			//t.style.left=(me.surf.getBoundingClientRect().left - window.lastY)+"px";
 			//alert("guest taken");
@@ -88,11 +80,11 @@ var Spot=function(B,S,ridx,cidx){
 		me.surf.appendChild(t);
 	}
 	me.untake_guest=function(){
-		
+
 		me.occupied=false;
 		me.locked=false;
 		me.guest=null;
-		
+
 		try{
 			var guest=me.surf.removeChild(me.surf.firstChild);
 			return guest;
@@ -101,13 +93,13 @@ var Spot=function(B,S,ridx,cidx){
 			//console.log(err);
 			return null;
 		}
-		
+
 		//if tile dragged-away then me.surf already childless
-		
+
 		//me.surf.style.border="1px solid";
 		//me.surf.style.borderColor="white";
-		
-		
+
+
 	}
 	me.contains=function(x,y){
 		var bcr=me.surf.getBoundingClientRect();
