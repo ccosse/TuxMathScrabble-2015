@@ -1,8 +1,8 @@
 /**********************************************************
 
-    Author          :Charles Brissac
-
-    Email           :cdbrissac_at_gmail_dot_com
+    Author          :Charlie Cosse
+		Website         :https://www.asymptopia.com
+    Email           :ccosse_at_gmail_dot_com
 
 ***********************************************************/
 var Player=function(player_idx,x0,y0,name,tray,robot,player_name){

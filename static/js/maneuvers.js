@@ -1,3 +1,10 @@
+/**********************************************************
+
+    Author          :Charlie Cosse
+		Website         :https://www.asymptopia.com
+    Email           :ccosse_at_gmail_dot_com
+
+***********************************************************/
 var MANEUVERS;
 MANEUVERS={
 	"Tux2D":{

@@ -44,7 +44,7 @@ Otherwise, this game is my legacy (!!), I suppose, to a certain
 extent, so I hope you enjoy and that it gets used and used some
 more!  Enjoy and Thanks for checking it out.
 
-Charles Brissac
-cdbrissac_at_gmail_dot_com
+Charlie Cosse
+ccosse_at_gmail_dot_com
 
 </pre>
